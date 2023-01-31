@@ -15,12 +15,12 @@ const Navbar = () => {
     },
     {
       id: 3,
-      name: "About",
+      name: "About Us",
       path: "/about",
     },
     {
       id: 4,
-      name: "Contact",
+      name: "Contact Us",
       path: "/contact",
     },
     {
