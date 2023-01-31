@@ -1,5 +1,11 @@
+import { Home } from "pages";
+
 function App() {
-  return <div className="App">denem</div>;
+  return (
+    <main className="App">
+      <Home />
+    </main>
+  );
 }
 
 export default App;
