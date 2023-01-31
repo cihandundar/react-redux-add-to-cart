@@ -3,6 +3,47 @@
   justify-content: space-between;
   align-items: center;
   padding-block: 30px;
+  @include breakpoint(sm) {
+    position: fixed;
+    z-index: 10;
+    top: -100vh;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #302c2d;
+    transition: 1s;
+  }
+  &__mobile {
+    @include breakpoint(sm) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px;
+    }
+  }
+  &__btn {
+    display: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    @include breakpoint(sm) {
+      display: block;
+      padding: 10px;
+      color: #df1a33;
+      background: none;
+      font-size: 25px;
+    }
+  }
+  &__closebtn {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+  }
   &__logo {
     a > img {
       width: 60px;
@@ -10,16 +51,43 @@
   }
   &__list {
     display: flex;
+    @include breakpoint(sm) {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
   }
   &__link {
     &:not(:last-child) {
       margin-right: 30px;
+      @include breakpoint(sm) {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
     }
     > a {
       transition: 0.3s ease;
+      @include breakpoint(sm) {
+        color: #fff;
+      }
       &:hover {
         color: #df1a33;
       }
     }
+  }
+}
+.responsive_nav {
+  @include breakpoint(sm) {
+    top: 0;
+  }
+}
+
+.mobile {
+  display: none;
+  @include breakpoint(sm) {
+    display: block;
+  }
+  a > img {
+    width: 60px;
   }
 }
