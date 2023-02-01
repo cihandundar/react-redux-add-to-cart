@@ -1,0 +1,33 @@
+.collection {
+  text-align: center;
+  padding: 30px;
+  > h2 {
+    font-size: 2rem;
+  }
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    > li {
+      transition: 0.3s ease;
+      cursor: pointer;
+      &:hover {
+        transform: translateY(-10px);
+      }
+    }
+    &__img {
+      > img {
+        width: 270px;
+        height: 270px;
+        object-fit: contain;
+      }
+    }
+    &__title {
+      font-weight: bold;
+    }
+  }
+}
