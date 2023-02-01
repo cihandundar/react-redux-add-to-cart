@@ -1,4 +1,5 @@
-import { Hero } from "components";
+import { FeaturedCollection, Hero } from "components";
+import Info from "components/Info";
 import React from "react";
 
 const Home = () => {
@@ -6,6 +7,8 @@ const Home = () => {
     <main>
       <section>
         <Hero />
+        <Info />
+        <FeaturedCollection />
       </section>
     </main>
   );
