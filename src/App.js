@@ -1,4 +1,4 @@
-import { Header } from "components";
+import { Footer, Header } from "components";
 import { Home, Login, Product } from "pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -10,6 +10,7 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
