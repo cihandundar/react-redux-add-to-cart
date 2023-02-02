@@ -1,0 +1,16 @@
+.footer {
+  padding: 30px;
+  background-color: #df1a33;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  &__left {
+    > p {
+      color: #fff;
+    }
+  }
+}
