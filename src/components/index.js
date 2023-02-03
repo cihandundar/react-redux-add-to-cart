@@ -4,4 +4,5 @@ import Hero from "./Hero";
 import Info from "./Info";
 import FeaturedCollection from "./FeaturedCollections";
 import Footer from "./Footer";
-export { Navbar, Header, Hero, Info, FeaturedCollection, Footer };
+import ProductItem from "./ProductItem";
+export { Navbar, Header, Hero, Info, FeaturedCollection, Footer, ProductItem };
