@@ -24,6 +24,11 @@ const Navbar = () => {
       name: "Login / Register",
       path: "/login",
     },
+    {
+      id: 4,
+      name: "Cart",
+      path: "/cart",
+    },
   ];
   return (
     <div className="nav__mobile">
