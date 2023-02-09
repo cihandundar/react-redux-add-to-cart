@@ -12,7 +12,7 @@ const ProductDetails = () => {
   useEffect(() => {
     dispatch(fetchDetails(slug));
   }, [dispatch, slug]);
-  console.log(data.properties.customerReviews);
+
   return (
     <main>
       <section className="details">
@@ -40,6 +40,26 @@ const ProductDetails = () => {
                 <p>{data?.description}</p>
               </div>
               <button>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div className="details__info">
+          <div className="details__info__container">
+            <div className="details__info__container__title">
+              <h2>Product Specifications</h2>
+            </div>
+            <div className="details__info__wrapper">
+              {data?.properties?.productDetails?.specifications.map((info) => (
+                <div className="details__info__box" key={info.id}>
+                  <div className="details__info__box__title">
+                    <h4>{info?.name}</h4>
+                  </div>
+                  <div className="details__info__box__img">
+                    <img src={info?.icon} alt="" />
+                  </div>
+                  <span>{info?.value}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
