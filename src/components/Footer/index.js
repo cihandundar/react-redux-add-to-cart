@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__left">
-          <p>© 2023 Enride(22)</p>
+          <p>© 2023 Shopping</p>
         </div>
         <div className="footer__icon">
           <a
