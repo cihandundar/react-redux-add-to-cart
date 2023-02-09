@@ -1,35 +1,46 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { fetchProduct } from "../../redux/productSlice";
+import { add } from "redux/cartSlice";
 const ProductItem = () => {
+  const data = useSelector((state) => state?.productReducer?.data);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchProduct());
   }, [dispatch]);
 
-  const data = useSelector((state) => state?.product?.data);
-  // const { isLoading, error } = useSelector((state) => state?.product);
+  const handleAdd = (item) => {
+    dispatch(add(item));
+  };
 
-  // if (isLoading) return <h1>Yükleniyor</h1>;
-  // if (error) return <h1>{error}</h1>;
+  console.log(data);
   return (
     <div className="item">
       <div className="item__container">
-        {data?.products?.map((item) => (
-          <div className="item__card" key={item?.id}>
-            <div className="item__card__img">
-              <img src={item?.coverImage} alt="" />
+        <div className="item__wrapper">
+          {data?.products?.map((item) => (
+            <div className="item__card" key={item?.id}>
+              <Link to={`/products/${item?.slug}`}>
+                <div className="item__card__img">
+                  <img src={item?.coverImage} alt="" />
+                </div>
+              </Link>
+              <div className="item__card__title">
+                <h3>{item?.title}</h3>
+                <span>{item?.name}</span>
+              </div>
+              <div className="item__card__price">
+                {item.wasPriceRange.toLocaleString("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                })}
+              </div>
+              <button onClick={() => handleAdd(item)}>Add to Cart</button>
             </div>
-            <div className="item__card__title">
-              <h3>{item?.title}</h3>
-              <span>{item?.name}</span>
-            </div>
-            <div className="item__card__price">
-              <p>$ {item?.isPriceRange}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
