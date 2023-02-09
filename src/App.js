@@ -1,5 +1,6 @@
 import { Footer, Header } from "components";
-import { Home, Login, Product } from "pages";
+import { Cart, Home, Login, Product } from "pages";
+import ProductDetails from "pages/ProductDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/products/:slug" element={<ProductDetails />} />{" "}
+        <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
