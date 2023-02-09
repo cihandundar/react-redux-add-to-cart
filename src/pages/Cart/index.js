@@ -8,20 +8,20 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="item">
-      <div className="item__container">
-        <div className="item__wrapper">
+    <div className="cart">
+      <div className="cart__container">
+        <div className="cart__wrapper">
           {data?.map((item) => (
-            <div className="item__card" key={item?.id}>
-              <div className="item__card__img">
+            <div className="cart__box" key={item?.id}>
+              <div className="cart__box__img">
                 <img src={item?.coverImage} alt="" />
               </div>
 
-              <div className="item__card__title">
+              <div className="cart__box__title">
                 <h3>{item?.title}</h3>
                 <span>{item?.name}</span>
               </div>
-              <div className="item__card__price">
+              <div className="cart__box__price">
                 {item.wasPriceRange.toLocaleString("en-US", {
                   style: "currency",
                   currency: "USD",
