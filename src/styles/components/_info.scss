@@ -5,6 +5,10 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
+    @include breakpoint(md) {
+      flex-direction: column;
+      text-align: center;
+    }
   }
   &__img {
     > img {
@@ -17,6 +21,9 @@
     }
   }
   &__text {
+    @include breakpoint(md) {
+      padding-inline: 70px;
+    }
     > p {
       font-weight: 200;
       padding-block: 10px;
