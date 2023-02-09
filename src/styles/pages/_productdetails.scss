@@ -28,6 +28,7 @@
     &__title {
       > h2 {
         font-size: 1.7rem;
+        color: #df1a33;
       }
       > h4 {
         font-weight: 300;
@@ -66,6 +67,14 @@
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
+      &__title {
+        padding-block: 20px;
+        > h2 {
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: #df1a33;
+        }
+      }
     }
     &__wrapper {
       display: flex;
@@ -78,6 +87,14 @@
       border: 1px solid #df1a33;
       margin: 10px;
       border-radius: 8px;
+      &__title {
+        > h4 {
+          color: #df1a33;
+        }
+      }
+      &__img {
+        padding-block: 5px;
+      }
     }
   }
 }
