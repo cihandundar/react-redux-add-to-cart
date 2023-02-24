@@ -2,9 +2,9 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
+import ShoppingIcon from "../../assets/icons/ShoppingIcon";
 const Navbar = () => {
   const navRef = useRef();
-
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav");
   };
@@ -23,11 +23,6 @@ const Navbar = () => {
       id: 3,
       name: "Login / Register",
       path: "/login",
-    },
-    {
-      id: 4,
-      name: "Cart",
-      path: "/cart",
     },
   ];
   return (
@@ -49,6 +44,11 @@ const Navbar = () => {
               <Link to={link?.path}>{link?.name}</Link>
             </li>
           ))}
+          <li>
+            <Link to="/cart">
+              <ShoppingIcon />
+            </Link>
+          </li>
         </ul>
         <button className="nav__btn nav__closebtn" onClick={showNavbar}>
           <FaTimes />

@@ -51,6 +51,7 @@
   }
   &__list {
     display: flex;
+    align-items: center;
     @include breakpoint(sm) {
       display: flex;
       align-items: center;
