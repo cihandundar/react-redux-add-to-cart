@@ -40,8 +40,9 @@
   }
 }
 
-// .loading {
-//   position: fixed;
-//   left: 50%;
-//   top: 50%;
-// }
+.spinner {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 50%;
+}

@@ -25,7 +25,7 @@ const ProductItem = () => {
         <div className="item__wrapper">
           {isLoading ? (
             <div>
-              <img src={Loading} alt="" />
+              <img className="spinner" src={Loading} alt="" />
             </div>
           ) : (
             data?.products?.map((item) => (
