@@ -6,6 +6,10 @@
     &__img {
       img {
         height: 500px;
+        @include breakpoint(sm) {
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }
@@ -64,6 +68,10 @@
 
     &__price {
       margin-left: -50px;
+      @include breakpoint(sm) {
+        margin-left: 0;
+        margin-block: 15px;
+      }
     }
 
     &__quantity {
@@ -84,6 +92,10 @@
     &__checkout {
       display: flex;
       justify-content: space-between;
+      @include breakpoint(sm) {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   }
 }
@@ -91,4 +103,32 @@
 .subtotal {
   display: flex;
   flex-direction: column;
+}
+
+.check {
+  border: none;
+  background: #df1a33;
+  color: #fff;
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  @include breakpoint(sm) {
+    width: 100%;
+    height: 50px;
+  }
+}
+
+.clear {
+  border: none;
+  background: #df1a33;
+  color: #fff;
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  @include breakpoint(sm) {
+    width: 100%;
+    height: 50px;
+  }
 }
