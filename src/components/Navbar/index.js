@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import ShoppingIcon from "../../assets/icons/ShoppingIcon";
+
 const Navbar = () => {
   const navRef = useRef();
   const showNavbar = () => {

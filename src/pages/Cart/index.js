@@ -8,9 +8,9 @@ const Cart = () => {
   console.log(data);
   const dispatch = useDispatch();
 
-  const handleRemove = (item) => {
+  function handleRemove(item) {
     dispatch(remove(item));
-  };
+  }
 
   const handleDecreaseCart = (item) => {
     dispatch(decreaseCart(item));
@@ -79,7 +79,9 @@ const Cart = () => {
             <div className="cart__box__summary">
               <div className="cart__box__checkout">
                 <div className="cart__box__clear">
-                  <button onClick={() => handleClearCart()}>Clear Cart</button>
+                  <button className="clear" onClick={() => handleClearCart()}>
+                    Clear Cart
+                  </button>
                 </div>
                 <div className="subtotal">
                   <div>
@@ -87,7 +89,7 @@ const Cart = () => {
                     <span>${data.cartTotalAmount}</span>
                   </div>
                   <Link to="/login">
-                    <button>Check out</button>
+                    <button className="check">Check out</button>
                   </Link>
                 </div>
               </div>
