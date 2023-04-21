@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchProduct } from "../../redux/productSlice";
-import { add } from "redux/cartSlice";
+import { addToCart } from "redux/cartSlice";
 import Loading from "../../assets/images/loading.gif";
 const ProductItem = () => {
   const data = useSelector((state) => state?.productReducer?.data);
@@ -15,7 +15,7 @@ const ProductItem = () => {
   }, [dispatch]);
 
   const handleAdd = (item) => {
-    dispatch(add(item));
+    dispatch(addToCart(item));
   };
 
   console.log(data);
