@@ -5,7 +5,6 @@ import { addToCart, clearCart, decreaseCart, remove } from "redux/cartSlice";
 import Empty from "../../assets/images/empty.jpg";
 const Cart = () => {
   const data = useSelector((state) => state?.cartReducer);
-  console.log(data);
   const dispatch = useDispatch();
 
   function handleRemove(item) {
