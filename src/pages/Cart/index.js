@@ -5,6 +5,7 @@ import { addToCart, clearCart, decreaseCart, remove } from "redux/cartSlice";
 import Empty from "../../assets/images/empty.jpg";
 const Cart = () => {
   const data = useSelector((state) => state?.cartReducer);
+
   const dispatch = useDispatch();
 
   function handleRemove(item) {
@@ -71,7 +72,13 @@ const Cart = () => {
                   <button onClick={() => handleIncreaseCart(item)}>+</button>
                 </div>
                 <div className="cart__box__total">
-                  ${item.wasPriceRange * item.cartQuantity}
+                  {(item?.isPriceRange * item?.cartQuantity).toLocaleString(
+                    "en-US",
+                    {
+                      style: "currency",
+                      currency: "USD",
+                    }
+                  )}
                 </div>
               </div>
             ))}
@@ -85,7 +92,7 @@ const Cart = () => {
                 <div className="subtotal">
                   <div>
                     <span>Subtotal</span>
-                    <span>${data.cartTotalAmount}</span>
+                    <span>${data?.cartTotalAmount}</span>
                   </div>
                   <Link to="/login">
                     <button className="check">Check out</button>
