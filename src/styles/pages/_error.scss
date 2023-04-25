@@ -1,0 +1,21 @@
+.error {
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    > a {
+      padding: 20px;
+      display: inline-block;
+      align-items: center;
+      justify-content: center;
+      background: #df1a33;
+      color: #fff;
+      border-radius: 8px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    > img {
+      width: 100%;
+    }
+  }
+}
