@@ -46,7 +46,7 @@ const Navbar = () => {
             </li>
           ))}
           <li>
-            <Link to="/cart">
+            <Link to="/cart" onClick={showNavbar}>
               <ShoppingIcon />
             </Link>
           </li>
