@@ -24,7 +24,7 @@ const ProductItem = () => {
       <div className="item__container">
         <div className="item__wrapper">
           {isLoading ? (
-            <div>
+            <div className="loading">
               <img className="spinner" src={Loading} alt="" />
             </div>
           ) : (
