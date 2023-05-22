@@ -25,6 +25,11 @@ const Navbar = () => {
       name: "Login / Register",
       path: "/login",
     },
+    {
+      id: 4,
+      name: "Cart",
+      path: "/cart",
+    },
   ];
   return (
     <div className="nav__mobile">
@@ -45,11 +50,6 @@ const Navbar = () => {
               <Link to={link?.path}>{link?.name}</Link>
             </li>
           ))}
-          <li>
-            <Link to="/cart" onClick={showNavbar}>
-              <ShoppingIcon />
-            </Link>
-          </li>
         </ul>
         <button className="nav__btn nav__closebtn" onClick={showNavbar}>
           <FaTimes />
