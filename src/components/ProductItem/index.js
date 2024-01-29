@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchProduct } from "../../redux/productSlice";
 import { addToCart } from "redux/cartSlice";
-import Loading from "../../assets/images/loading.gif";
 const ProductItem = () => {
   const data = useSelector((state) => state?.productReducer?.data);
   const dispatch = useDispatch();
@@ -25,7 +24,7 @@ const ProductItem = () => {
         <div className="item__wrapper">
           {isLoading ? (
             <div className="loading">
-              <img className="spinner" src={Loading} alt="" />
+              <span class="loader"></span>
             </div>
           ) : (
             data?.products?.map((item) => (
