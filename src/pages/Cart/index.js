@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart, clearCart, decreaseCart, remove } from "redux/cartSlice";
+import {
+  addToCart,
+  clearCart,
+  decreaseCart,
+  getTotals,
+  remove,
+} from "redux/cartSlice";
 import Empty from "../../assets/images/empty.jpg";
 const Cart = () => {
   const data = useSelector((state) => state?.cartReducer);
@@ -23,6 +29,10 @@ const Cart = () => {
   const handleClearCart = () => {
     dispatch(clearCart());
   };
+
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [data]);
 
   return (
     <div className="cart">
@@ -91,8 +101,13 @@ const Cart = () => {
                 </div>
                 <div className="subtotal">
                   <div>
-                    <span>Subtotal</span>
-                    <span>${data?.cartTotalAmount}</span>
+                    <span>Subtotal</span> {""}
+                    <span>
+                      {data?.cartTotalAmount?.toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                      })}
+                    </span>
                   </div>
                   <Link to="/login">
                     <button className="check">Check out</button>
