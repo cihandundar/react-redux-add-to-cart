@@ -34,6 +34,7 @@ const cartSlice = createSlice({
       );
       state.cartItems = nextCartItems;
       toast.info(`${action.payload.name} deleted`);
+        localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
     decreaseCart(state, action) {
       const itemIndex = state.cartItems.findIndex(

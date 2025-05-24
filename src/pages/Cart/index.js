@@ -65,9 +65,9 @@ const Cart = () => {
                   <div className="cart__box__title">
                     <h3>{item?.title}</h3>
                     <span>{item?.name}</span>
-                    <button onClick={() => dispatch(handleRemove(item))}>
-                      Remove
-                    </button>
+              <button onClick={() => handleRemove(item)}>
+                Remove
+              </button>
                   </div>
                 </div>
                 <div className="cart__box__price">
